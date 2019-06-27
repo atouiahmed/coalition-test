@@ -19,33 +19,25 @@
     <div class="row m-5">
         <div class="pull-left m-4">
             <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Add</button>
-            <button class="btn btn-danger">Delete</button>
         </div>
         <table class="table">
             <thead>
             <tr>
 
-                <th>#</th>
+                <th>Product Id</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
-                <th scope="col">Total</th>
+                <th scope="col">SubTotal</th>
                 <th scope="col">Created At</th>
+                <th scope="col">Actions</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><input type="checkbox" class="form-check"></td>
-                <td>Product</td>
-                <td>2</td>
-                <td>100</td>
-                <td>200</td>
-                <td>12/01/2015</td>
-            </tr>
             </tbody>
         </table>
         <div class="pull-right">
-            <p class="font-weight-bold">Total: 200</p>
+            <p class="font-weight-bold">Total value number: <span id="total">0</span></p>
         </div>
     </div>
 </div>
@@ -60,17 +52,24 @@
             </div>
             <div class="modal-body">
                 <form>
+                    <input id="InputProductId" type="hidden">
                     <div class="form-group">
                         <label for="InputProductName">Product Name</label>
-                        <input required type="text" class="form-control" id="InputProductName" placeholder="Enter Product Name">
+                        <input required type="text" class="form-control" id="InputProductName"
+                               placeholder="Enter Product Name">
+                        <p class="text-danger name_error"></p>
                     </div>
                     <div class="form-group">
                         <label for="InputQuantity">Product Quantity</label>
-                        <input required type="number" class="form-control" id="InputQuantity"  placeholder="Enter Product Quantity">
+                        <input required type="number" class="form-control" id="InputQuantity"
+                               placeholder="Enter Product Quantity">
+                        <p class="text-danger qte_error"></p>
                     </div>
                     <div class="form-group">
                         <label for="InputPrice">Product Price</label>
-                        <input required type="number" class="form-control" id="InputPrice"  placeholder="Enter Product Price">
+                        <input required type="number" class="form-control" id="InputPrice"
+                               placeholder="Enter Product Price">
+                        <p class="text-danger price_error"></p>
                     </div>
                 </form>
             </div>
